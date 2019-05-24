@@ -11,6 +11,9 @@ using std::endl;
 #include <vector>
 using std::vector;
 
+#include <string>
+using std::string;
+
 int main(){
     vector<Carro*> lista_carros;
     int opcion=0;
