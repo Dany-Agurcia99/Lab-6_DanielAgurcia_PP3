@@ -2,7 +2,8 @@
 
 
 Chasis::Chasis(){
-    
+    this->rueda="";
+    this->automatico="";
 }
 
 Chasis::Chasis(string rueda, string automatico){

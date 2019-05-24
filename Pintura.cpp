@@ -1,7 +1,8 @@
 #include "Pintura.h"
 
 Pintura::Pintura(){
-
+    this->color="";
+    this->acabado="";
 }
 
 Pintura::Pintura(string color, string acabado){
@@ -13,7 +14,7 @@ string Pintura::getColor(){
     return color;
 }
 
-void Pintura::setColor(strign color){
+void Pintura::setColor(string color){
     this->color=color;
 }
 

@@ -1,7 +1,8 @@
 #include "Carro.h"
 
 Carro::Carro(){
-
+    this->modelo = "";
+    this->numero_modelo=0;
 }
 
 Carro::Carro(string modelo, int numero_modelo, Chasis chasis, Motor motor, Pintura pintura){
