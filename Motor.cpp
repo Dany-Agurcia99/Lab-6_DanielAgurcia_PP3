@@ -8,11 +8,11 @@ Motor::Motor(bool,string){
 
 }
 
-bool Motor::getElectrico(){
+string  Motor::getElectrico(){
 
 }
 
-void Motor::setElectrico(){
+void Motor::setElectrico(string electrico){
 
 }
 
@@ -20,7 +20,7 @@ string Motor::getConfig(){
 
 }
 
-void Motor::setConfig(){
+void Motor::setConfig(string config){
 
 }
 

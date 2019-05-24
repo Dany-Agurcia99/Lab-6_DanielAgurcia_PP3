@@ -8,17 +8,17 @@ class Chasis{
 
     private:
         string rueda;
-        bool automatico;
+        string automatico;
 
     public:
         Chasis();
-        Chasis(string, bool);
+        Chasis(string, string);
 
         string getRueda();
-        void setRueda();
+        void setRueda(string);
 
-        bool getAutomatico();
-        void setAutomatico();
+        string getAutomatico();
+        void setAutomatico(string);
 
         string toString();
 };

@@ -6,17 +6,17 @@ using std::string;
 
 class Motor{
     private:
-        bool electrico;
+        string electrico;
         string config;
     public:
         Motor();
-        Motor(bool,string);
+        Motor(string,string);
 
-        bool getElectrico();
-        void setElectrico();
+        string getElectrico();
+        void setElectrico(string);
 
         string getConfig();
-        void setConfig();
+        void setConfig(string);
 
         string toString();
 };

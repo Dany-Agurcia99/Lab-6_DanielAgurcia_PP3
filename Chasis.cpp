@@ -5,24 +5,25 @@ Chasis::Chasis(){
     
 }
 
-Chasis::Chasis(string, bool){
-
+Chasis::Chasis(string rueda, string automatico){
+    this->rueda=rueda;
+    this->automatico=automatico;
 }
 
 string Chasis::getRueda(){
-
+    return rueda;
 }
 
-void Chasis::setRueda(){
-
+void Chasis::setRueda(string rueda){
+    this->rueda=rueda;
 }
 
-bool Chasis::getAutomatico(){
-
+string Chasis::getAutomatico(){
+    return automatico;
 }
 
-void Chasis::setAutomatico(){
-
+void Chasis::setAutomatico(string automatico){
+    this->automatico=automatico;
 }
 
 string Chasis::toString(){

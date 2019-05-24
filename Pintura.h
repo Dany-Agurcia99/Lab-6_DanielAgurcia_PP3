@@ -13,10 +13,10 @@ class Pintura{
         Pintura(string, string);
 
         string getColor();
-        void setColor();
+        void setColor(string);
 
         string getAcabado();
-        void setAcabado();
+        void setAcabado(string);
 
         string toString();
 };
