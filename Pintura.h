@@ -10,6 +10,7 @@ class Pintura{
         string acabado;
     public:
         Pintura();
+        int j;
         Pintura(string, string);
 
         string getColor();
