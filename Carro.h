@@ -10,6 +10,7 @@ using std::string;
 
 class Carro{
     private: 
+        int j;
         string modelo;
         int numero_modelo;
         Chasis chasis;
