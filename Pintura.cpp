@@ -27,5 +27,7 @@ void Pintura::setAcabado(string acabado){
 }
 
 string Pintura::toString(){
-
+    string PinturaStr;
+    PinturaStr="["+color+","+acabado+"]";
+    return PinturaStr;
 }

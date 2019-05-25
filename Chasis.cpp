@@ -28,5 +28,7 @@ void Chasis::setAutomatico(string automatico){
 }
 
 string Chasis::toString(){
-
+    string ChasisStr;
+    ChasisStr="["+rueda+","+automatico+"]";
+    return ChasisStr;
 }

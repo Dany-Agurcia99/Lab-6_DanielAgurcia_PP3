@@ -18,12 +18,14 @@ char** CreateMatrix(char**);
 void PrintMatrix(char**);
 void FreeMatrix(char**);
 void FreeVector(vector<Carro*>);
-void AgregarListaProduccion();
+void AgregarListaProduccion(char**,int);
 void VerLineasProduccion();
 void VerListadoCarros();
-void AvanzarCiclo();
+void AvanzarCiclo(char**);
 
 vector<Carro*> lista_carros;
+vector<Carro*> lista_prototipos;
+vector<Carro*> lista_enProduccion;
 
 int main(){
     char** matrix = new char*[5];
@@ -44,7 +46,7 @@ int main(){
                     case 1:
                         contador++;
                         if (contador<=5){
-                            AgregarListaProduccion();
+                            AgregarListaProduccion(matrix, contador);
                         }else{
                             cout<<"Ya no se pueden agregar mas listas de produccion"<<endl;
                         }
@@ -59,11 +61,13 @@ int main(){
                         VerListadoCarros();
                         break;
                     case 5:
-                        AvanzarCiclo();
+                        AvanzarCiclo(matrix);
                         break;
                     case 6:
                         FreeMatrix(matrix);
                         FreeVector(lista_carros);
+                        FreeVector(lista_enProduccion);
+                        FreeVector(lista_prototipos);
                         break;
                 }
         }
@@ -97,15 +101,56 @@ void FreeVector(vector<Carro*> lista_carros){
         delete lista_carros[i];
     }
 }
-void AgregarListaProduccion(){
+void AgregarListaProduccion(char** matrix, int posicion){
+    string modelo;
+    cout<<"Ingrese modelo del carro: ";
+    cin>>modelo;
+    int numero;
+    cout<<"Ingrese el numero de modelo del carro: ";
+    cin>>numero;
 
+    string rueda;
+    cout<<"Ingrese las ruedas del chasis: ";
+    cin>>rueda;
+    string automatico;
+    cout<<"Ingrese si es automatico el chasis: ";
+    cin>>automatico;
+
+    string electrico;
+    cout<<"Ingrese si el motor es electrico: ";
+    cin>>electrico;
+    string config;
+    cout<<"Ingrese la configuracion del motor: ";
+    cin>>config;
+
+    string color;
+    cout<<"Ingrese el color del carro";
+    cin>>color;
+    string acabado;
+    cout<<"Ingrese el acabado del carro";
+    cin>>acabado;
+
+    Chasis* chasis = new Chasis(rueda,automatico);
+    Motor* motor = new Motor(electrico,config);
+    Pintura* pintura = new Pintura(color,acabado);
+
+    Carro* prototype = new Carro(modelo,numero,chasis,motor,pintura);
+    lista_prototipos.push_back(prototype);
+    matrix[posicion-1][0]='P';
 }
 void VerLineasProduccion(){
-
+    for (int i = 0; i < lista_enProduccion.size(); i++){
+        cout<<lista_enProduccion[i]->toString()<<endl;
+        cout<<"*****************"<<endl;
+    }
 }
 void VerListadoCarros(){
-
+    for (int i = 0; i < lista_carros.size(); i++){
+        cout<<lista_carros[i]->toString()<<endl;
+        cout<<"*****************"<<endl;
+    }
 }
-void AvanzarCiclo(){
+void AvanzarCiclo(char** matrix){
 
+    PrintMatrix(matrix);
 }

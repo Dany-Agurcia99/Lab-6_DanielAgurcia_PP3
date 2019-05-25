@@ -27,5 +27,7 @@ void Motor::setConfig(string config){
 }
 
 string Motor::toString(){
-
+    string MotorStr;
+    MotorStr="["+electrico+","+config+"]";
+    return MotorStr;
 }
