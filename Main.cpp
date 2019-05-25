@@ -77,6 +77,11 @@ char** CreateMatrix(char** matrix){
     for(int i=0;i<5;i++){
         matrix[i] = new char[4];
     }
+    for(int i=0;i<5;i++){
+		for(int j=0;j<4;j++){
+			matrix[i][j]=' '; 
+		}
+	}
     return matrix;
 }
 void PrintMatrix(char** matrix){
@@ -151,6 +156,28 @@ void VerListadoCarros(){
     }
 }
 void AvanzarCiclo(char** matrix){
-
+    int cont=0;
+    
+    for( int i = 0; i < 5; i++){
+        Carro* nuevo_carro = lista_enProduccion[i];
+        for (int j = 0; j < 4; j++){
+            if (matrix[i][0]=='P'&&matrix[i][j]==' '){
+                matrix[i][j]='C';
+                j=20;
+            }
+        }
+        for (int k = 0; k < 5; k++){
+            for (int l = 0; l < 4; l++){
+                if(matrix[k][l]!=' '){
+                    cont++;
+                }
+            }
+            if(cont==4){
+                lista_enProduccion.erase(lista_enProduccion.begin()+lista_enProduccion.size());
+                lista_carros.push_back(lista_enProduccion[i]);
+            }
+        }
+    }
+    
     PrintMatrix(matrix);
 }
